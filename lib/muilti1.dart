@@ -23,11 +23,13 @@ class _MutificationState extends State<Mutification> {
       ),
       body: Column(
         children: [
-          TextFormField(
-            keyboardType: TextInputType.phone,
-            controller: txtno,
-            decoration: InputDecoration(
-                hintText: "Enter the no"
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              keyboardType: TextInputType.phone,
+              controller: txtno,
+              decoration: InputDecoration(
+                  hintText: "Enter the no"),
             ),
           ),
 
@@ -35,13 +37,7 @@ class _MutificationState extends State<Mutification> {
             String? no = txtno.text;
             int i= int.parse(no);
             Data d1 =Data(i: i);
-
-
-
-
             Navigator.pushNamed(context, 'next',arguments: d1);
-
-
           }, child: Text("Sumiit"))
         ],
       ),
